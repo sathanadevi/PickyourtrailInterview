@@ -20,6 +20,7 @@ public class UniqueArray {
 		Set<Integer> set = new HashSet<Integer>();
 		ArrayList<Integer> duplicate = new ArrayList<Integer>();
 		System.out.println("Enter the " + n + " elements in an array");
+		int sum=0;
 		for(int i= 0 ; i< n;i++)
 		{
 			int value = scan.nextInt();
@@ -28,7 +29,8 @@ public class UniqueArray {
 				duplicate.add(value);
 			}
 			else
-			{
+			{ 
+				sum += value;
 				set.add(value);
 			}
 		}
@@ -42,13 +44,8 @@ public class UniqueArray {
 					duplicatevalue++;
 				}
 				set.add(duplicatevalue);
+				sum += duplicatevalue;
 			}
-		}
-		i  = set.iterator();
-		int sum=0;
-		while(i.hasNext())
-		{
-			sum += i.next();
 		}
 		System.out.print(sum);
 	}
